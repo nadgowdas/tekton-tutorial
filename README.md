@@ -1,5 +1,6 @@
 # Tekton 101 Workshop
 
-This is the source repository for a workshop about Tekton on OpenShift. To view it online, go to:
+This is the source repository for a workshop about Tekton. The parent repo is available at:
 
-<https://ibm.github.io/tekton-tutorial-openshift>
+https://github.com/IBM/tekton-tutorial-openshift
+
