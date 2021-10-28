@@ -8,9 +8,6 @@ spec:
   selector:
     matchLabels:
       app: picalc
-  securityContext:
-    readOnlyRootFilesystem: true
-    runAsNonRoot: true
   template:
     metadata:
       labels:
@@ -19,6 +16,9 @@ spec:
       containers:
       - name: picalc
         image: __IMAGE__@__DIGEST__
+        securityContext:
+          readOnlyRootFilesystem: true
+          runAsNonRoot: true
         ports:
         - name: http-server
           containerPort: 8080
