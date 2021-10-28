@@ -15,6 +15,9 @@ spec:
     spec:
       containers:
       - name: picalc
+	securityContext:
+      	   readOnlyRootFilesystem: true
+           runAsNonRoot: true
         image: __IMAGE__@__DIGEST__
         ports:
         - name: http-server
@@ -28,7 +31,6 @@ spec:
             cpu: "500m"
       imagePullSecrets:
       - name: ibm-cr-pull-secret
-      serviceAccountName: pipeline-account
 ---
 apiVersion: v1
 kind: Service
