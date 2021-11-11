@@ -7,7 +7,6 @@ FROM golang:1.12 as builder
 WORKDIR /go/src/github.com/IBM/tekton-tutorial
 COPY picalc.go picalc_test.go .
 
-#demo
 # Run unit tests
 RUN CGO_ENABLED=0 GOOS=linux go test
 
