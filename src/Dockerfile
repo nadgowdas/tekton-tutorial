@@ -18,6 +18,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -o picalc
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 FROM alpine
 
+# Demo Take 1
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /go/src/github.com/IBM/tekton-tutorial/picalc /picalc
 
