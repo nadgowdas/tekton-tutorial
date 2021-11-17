@@ -7,7 +7,6 @@ FROM golang:1.12 as builder
 WORKDIR /go/src/github.com/IBM/tekton-tutorial
 COPY picalc.go picalc_test.go .
 
-# Demo Take 1
 # Run unit tests
 RUN CGO_ENABLED=0 GOOS=linux go test
 
@@ -18,7 +17,6 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -o picalc
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 FROM alpine
 
-# Demo Take 1
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /go/src/github.com/IBM/tekton-tutorial/picalc /picalc
 
